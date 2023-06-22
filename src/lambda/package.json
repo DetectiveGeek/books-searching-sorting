@@ -1,0 +1,20 @@
+{
+  "name": "books-searching-sorting",
+  "version": "0.1.0",
+  "bin": {
+    "books-searching-sorting": "bin/books-searching-sorting.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+    "apollo-server-lambda": "^3.12.0",
+    "graphql": "^16.6.0",
+    "mongoose": "^7.3.0"
+  }
+}
