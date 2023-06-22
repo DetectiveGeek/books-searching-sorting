@@ -10,6 +10,7 @@ const bookSchema = new Schema(
     title: {
       type: String,
       required: true,
+      index: true,
     },
     averageRating: {
       type: String,
@@ -18,6 +19,7 @@ const bookSchema = new Schema(
     isbn: {
       type: String,
       required: true,
+      index: true,
     },
     isbn13: {
       type: String,
