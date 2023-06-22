@@ -131,7 +131,7 @@ query SearchBooks(
 
 Variables:
 
-fieldAttr (required): Field to search against (title, author, publisher).
+fieldAttr (required): Field to search against (title, author, publisher, isbn).
 fieldVal (required): Value to match in the specified field.
 page (optional): Page number for pagination.
 perPage (optional): Number of books per page.
