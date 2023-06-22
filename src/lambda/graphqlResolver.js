@@ -14,6 +14,7 @@ const typeDefs = gql`
     title
     author
     publisher
+    isbn
   }
   enum SortDirection {
     DESC
