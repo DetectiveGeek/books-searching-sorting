@@ -1,7 +1,5 @@
 # books-searching-sorting
 
-If this project helps you, please add a star! If you see an issue, please post it!
-
 This project uses AWS CDK, AWS SAM, AWS API Gateway, AWS Lambda, and MongoDB.
 
 This project implements aws cdk stack to define AWS API Gateway and required lambda functions to apply searching and sorting on Books collection by exposing graphql API
@@ -28,7 +26,7 @@ LAMBDA_TIMEOUT_SECS=300
 1. `MONGO_URI` the location of your mongo server and database name you want. Use the MONGO_URL provided to use the MongoDB ATLAS as db.
 2. `LAMBDA_TIMEOUT_SECS` the lambda timeout
 
-### Start the server
+### Run Application
 
 - `npm install`
 
