@@ -16,9 +16,10 @@ export class BooksSearchingSortingStack extends Stack {
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: "graphqlResolver.handler",
       code: lambda.Code.fromAsset("src/lambda"),
-      timeout: cdk.Duration.minutes(15),
+      timeout: cdk.Duration.seconds(Number(process.env.LAMBDA_TIMEOUT_SECS)),
     });
 
+    // Define API and add HTTP methods
     const api = new apigateway.RestApi(this, "GraphQLAPI", {
       restApiName: "GraphQL API",
     });
@@ -106,6 +107,7 @@ export class BooksSearchingSortingStack extends Stack {
       value: api.url ?? "",
     });
 
+    // Define Lambdas
     const dbHandler = new lambda.Function(this, "DBHandler", {
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: "db.connectToDatabase",
@@ -120,14 +122,14 @@ export class BooksSearchingSortingStack extends Stack {
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: "getBooks.handler",
       code: lambda.Code.fromAsset("src/lambda/books"),
-      timeout: cdk.Duration.minutes(15),
+      timeout: cdk.Duration.seconds(Number(process.env.LAMBDA_TIMEOUT_SECS)),
     });
 
     const searchBooksHandler = new lambda.Function(this, "SearchBooksHandler", {
       runtime: lambda.Runtime.NODEJS_18_X,
       handler: "searchBooks.handler",
       code: lambda.Code.fromAsset("src/lambda/books"),
-      timeout: cdk.Duration.minutes(15),
+      timeout: cdk.Duration.seconds(Number(process.env.LAMBDA_TIMEOUT_SECS)),
     });
   }
 }
